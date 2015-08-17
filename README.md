@@ -11,11 +11,14 @@
    $ git clone https://github.com/radiovisual/metalsmith-boilerplate.git new-metalsmith-project
    ```
 
-2. Run the following command: 
+2. Run the following command within your new project directory: 
    
-   `$ make setup`
+   ```sh
+   $ cd new-metalsmith-project 
+   $ make setup
+   ```
   
-   The above command will run `npm install` and create the following project structure:
+   The `make setup` command will run `npm install` and create the following project structure:
    
         src/
           content/
