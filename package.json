@@ -26,6 +26,7 @@
   "homepage": "https://github.com/radiovisual/metalsmith-boilerplate#readme",
   "devDependencies": {
     "handlebars": "^3.0.3",
+    "harmonize": "^1.4.4",
     "metalsmith": "^2.0.1",
     "metalsmith-branch": "0.0.4",
     "metalsmith-browser-sync": "^1.0.0",

@@ -1,8 +1,9 @@
+require('harmonize')(); // allow node to use ES6 syntax
+
 var Metalsmith = require('metalsmith');
 var sass = require('metalsmith-sass');
 var layouts = require('metalsmith-layouts');
 var branch = require('metalsmith-branch');
-var postcss = require('metalsmith-postcss');
 
 /**
  *  A good starting point.
