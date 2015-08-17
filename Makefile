@@ -1,5 +1,5 @@
 node_modules: package.json
-	@npm install
+	npm install
 
 setup: node_modules
 
