@@ -5,14 +5,14 @@
 ## Usage
 
 1. Make your project folder and clone metalsmith-boilerplate into it
-    ```sh
-    $ mkdir new-metalsmith-project
-    $ git clone https://github.com/radiovisual/metalsmith-boilerplate.git new-metalsmith-project
-    ```
+```sh
+$ mkdir new-metalsmith-project
+$ git clone https://github.com/radiovisual/metalsmith-boilerplate.git new-metalsmith-project
+```
 2. Run the following command: 
-    ```sh
-    $ make setup
-    ```
+```sh
+$ make setup
+```
 
 **Note:** Running `make setup` will run `npm install` and create the following project structure:
 <pre>
