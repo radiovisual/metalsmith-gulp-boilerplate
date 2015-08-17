@@ -6,7 +6,10 @@ setup: node_modules
 	@echo  && echo making src directory
 	@mkdir -p src/{content,images,scripts,styles}
 
-	@echo making template directory && echo
-	@mkdir -p templates/partials
+	@echo making partials directory && echo
+	@mkdir -p partials
+
+	@echo making layouts directory && echo
+    @mkdir -p layouts
 
 .PHONY: setup

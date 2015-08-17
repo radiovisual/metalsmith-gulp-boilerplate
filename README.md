@@ -20,14 +20,15 @@
   
    The `make setup` command will run `npm install` and create the following project structure:
    
+        layouts/
+        partials/
         src/
           content/
           images/
           scripts/
           styles/
-  
-        templates/
-          partials/ 
+        
+         
 
    *Otherwise you are free to create your own project structure and run `npm install` independently.*
 
