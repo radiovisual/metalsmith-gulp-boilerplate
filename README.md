@@ -9,19 +9,22 @@
 $ mkdir new-metalsmith-project
 $ git clone https://github.com/radiovisual/metalsmith-boilerplate.git new-metalsmith-project
 ```
-2. Now run the command `$ make setup` which will do two things:
-     1. runs `$ npm install` to install dependencies
-     2. creates a default project structure for you:
-     <pre>
-     src /
-        content/
-        images/
-        scripts/
-        styles/
-     
-     templates/
-        partials/ 
-     </pre>
+
+2. Run the following command: 
+```sh
+$ make setup
+```
+Running `make setup` will run `npm install` and create the following project structure:
+<pre>
+src /
+  content/
+  images/
+  scripts/
+  styles/
+  
+templates/
+  partials/ 
+</pre>
 
 
 
