@@ -29,6 +29,8 @@
         templates/
           partials/ 
 
+   *Otherwise you are free to create your own project structure and run `npm install` independently.*
+   
 *Now you are ready to start Metalsmithing!*
 
 
