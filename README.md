@@ -4,12 +4,26 @@
 
 ## Usage
 
-Make your project folder and clone metalsmith-boilerplate into it
-
+1. Make your project folder and clone metalsmith-boilerplate into it
 ```sh
 $ mkdir new-metalsmith-project
 $ git clone https://github.com/radiovisual/metalsmith-boilerplate.git new-metalsmith-project
 ```
+1. Now run the command `$ make setup` which will do two things:
+     * runs `$ npm install` to install dependencies
+     * creates a default project structure for you:
+     ```sh
+     src /
+        content/
+        images/
+        scripts/
+        styles/
+     
+     templates/
+        partials/ 
+     ```
+
+
 
 ## Defaults
 
