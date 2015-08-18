@@ -16,8 +16,14 @@
    ```sh
    $ npm install
    ```
-  
-3. *Now you are ready to start Metalsmithing!* :thumbsup:
+
+3. Now start the build/watch process with this command:
+   
+   ```sh
+   $ node index.js
+   ```
+   
+4. *Now you are ready to start Metalsmithing!* :thumbsup:
 
 
 ## Defaults
