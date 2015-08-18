@@ -14,23 +14,10 @@
 2. Run the following command within your new project directory: 
    
    ```sh
-   $ cd new-metalsmith-project 
-   $ make setup
+   $ npm install
    ```
   
-   The `make setup` command will run `npm install` and create the following project structure:
-   
-        layouts/
-        partials/
-        src/
-          content/
-          images/
-          scripts/
-          styles/
-        
-         
-
-   *Otherwise you are free to create your own project structure and run `npm install` independently.*
+3. *Now you are ready to start Metalsmithing!* :thumbsup:
 
 
 ## Defaults

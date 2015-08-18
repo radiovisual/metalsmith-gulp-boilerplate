@@ -1,9 +1,20 @@
 require('harmonize')(); // allow node to use ES6 syntax
 
+var browserSync = require('metalsmith-browser-sync');
+var fingerprint = require('metalsmith-fingerprint');
+var layouts = require('metalsmith-layouts');
+var ignore = require('metalsmith-ignore');
+var rename = require('metalsmith-rename');
+var branch = require('metalsmith-branch');
 var Metalsmith = require('metalsmith');
 var sass = require('metalsmith-sass');
-var layouts = require('metalsmith-layouts');
-var branch = require('metalsmith-branch');
+
+var template = require('metalsmith-templates');
+
+/**
+ * Import metadata
+ */
+var metadata = require('./metadata');
 
 /**
  *  A good starting point.
@@ -19,15 +30,39 @@ Metalsmith(__dirname)
 
     .destination('./build')
 
+    // Process metadata
+    .metadata(metadata)
+
+    // Process css
+    .use(sass({
+        outputDir: 'css/',
+        sourceMap: true,
+        sourceMapContents: true
+    }))
+    .use(fingerprint({pattern: ['css/main.css']}))
+    .use(ignore(['css/index.css']))
+
+    // Process js
+    .use(fingerprint({pattern: ['js/main.js']}))
+    .use(ignore(['js/index.js']))
+
     // Process templates
     .use(branch('*.hbs')
         .use(layouts({
             engine: 'handlebars',
+            directory: 'templates',
             partials: 'partials'
         }))
     )
 
-    .use(sass())
+    // rename handlebars templates to .html
+    .use(rename([[/\.hbs$/, '.html']]))
+
+    // Serve and watch for changes
+    .use(browserSync({
+        server : './build',
+        files : ['src/**/*', 'templates/**/*', 'partials/**/*']
+    }))
 
     // Build Site
     .build(function(err) {
