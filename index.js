@@ -1,3 +1,5 @@
+'use strict';
+
 require('harmonize')(); // allow node to use ES6 syntax
 
 var browserSync = require('metalsmith-browser-sync');
@@ -8,13 +10,14 @@ var rename = require('metalsmith-rename');
 var branch = require('metalsmith-branch');
 var Metalsmith = require('metalsmith');
 var sass = require('metalsmith-sass');
+var rootPath = require('metalsmith-rootpath');
 
-var template = require('metalsmith-templates');
 
 /**
  * Import metadata
  */
 var metadata = require('./metadata');
+
 
 /**
  *  A good starting point.
@@ -46,12 +49,14 @@ Metalsmith(__dirname)
     .use(fingerprint({pattern: ['js/main.js']}))
     .use(ignore(['js/index.js']))
 
+    .use(rootPath())
+
     // Process templates
-    .use(branch('*.hbs')
+    .use(branch('**/*.hbs')
         .use(layouts({
             engine: 'handlebars',
             directory: 'templates',
-            partials: 'partials'
+            partials: 'templates/partials'
         }))
     )
 

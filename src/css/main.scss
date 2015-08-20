@@ -1,5 +1,6 @@
 $red: #ae2829;
 
 a { color: $red; text-decoration: none; }
+a:hover { color: $red; text-decoration: underline; }
 
 ul li { list-style: none; }

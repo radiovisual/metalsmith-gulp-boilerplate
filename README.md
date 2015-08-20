@@ -33,8 +33,10 @@ These are my current defaults, but you can swap these out for anything you want.
 - **Templating:** [Handlebars](http://handlebarsjs.com/) *via [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts)*
 - **CSS Precompiler:** [SASS](https://github.com/stevenschobert/metalsmith-sass)
 - **Live Reloading:** [BrowserSync](https://github.com/mdvorscak/metalsmith-browser-sync)
-  
-## What next?
+- **Relative Navigation:** Solved with [metalsmith-rootpath](https://github.com/radiovisual/metalsmith-rootpath)
+- **Cache-busting** via [metalsmith-fingerprint](https://github.com/christophercliff/metalsmith-fingerprint)
+
+## What Next?
 
 - Start adding [Metalsmith plugins](http://www.metalsmith.io/#the-plugins) to suit your project's needs
 

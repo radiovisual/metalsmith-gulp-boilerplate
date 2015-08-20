@@ -29,6 +29,7 @@ node_modules
 # Don't commit the Metalsmith build directory
 build
 
+# Misc file system and IDE configs
 .DS_Store
 .idea
 
