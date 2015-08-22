@@ -1,0 +1,35 @@
+{
+  "source": "./src",
+  "destination": "./build",
+  "metadata": {
+    "site": {
+      "name": "Your Site Title Here",
+      "description": "A simple static website boilerplate with Metalsmith & Gulp",
+      "url": "https://github.com/radiovisual/metalsmith-boilerplate",
+      "author": "radiovisual",
+      "email": "user@example.com",
+      "keywords": [
+        "Your",
+        "Keywords",
+        "Here"
+      ]
+    }
+  },
+  "assets": {
+    "paths" : {
+      "vendor": ["js/vendor/*.js"],
+      "sass": ["css/*.scss"],
+      "scripts": ["js/*.js"],
+      "html": ["*.html"],
+      "minifyconcat": ["js/bin/*.js"],
+      "jsbin": "js/bin/"
+    }
+  },
+  "minified": {
+    "css": "styles.min.css",
+    "js": "scripts.min.js",
+    "jsdependencies": "0_dependencies.min.js",
+    "browserify": "1_bundle.min.js"
+  }
+
+}
