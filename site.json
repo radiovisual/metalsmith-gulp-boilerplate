@@ -16,20 +16,22 @@
     }
   },
   "assets": {
-    "paths" : {
-      "vendor": ["js/vendor/*.js"],
-      "sass": ["css/*.scss"],
-      "scripts": ["js/*.js"],
-      "html": ["*.html"],
-      "minifyconcat": ["js/bin/*.js"],
-      "jsbin": "js/bin/"
+    "globs" : {
+      "vendor": ["./src/js/vendor/*.js"],
+      "sass": ["./src/css/*.scss"],
+      "scripts": ["./src/js/*.js"],
+      "html": ["./src/*.html"]
+    },
+    "paths":{
+      "css": "./src/css",
+      "jsbin": "./src/js/bin/"
     }
   },
   "minified": {
     "css": "styles.min.css",
     "js": "scripts.min.js",
-    "jsdependencies": "0_dependencies.min.js",
-    "browserify": "1_bundle.min.js"
+    "jsdependencies": "dependencies.min.js",
+    "browserify": "bundle.min.js"
   }
 
 }
