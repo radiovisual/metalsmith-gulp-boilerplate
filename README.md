@@ -1,8 +1,8 @@
 # metalsmith-boilerplate
-> A starter template for [Metalsmith](https://github.com/segmentio/metalsmith) projects
+> A starter template for [Metalsmith](https://github.com/segmentio/metalsmith) + [Gulp](https://github.com/gulpjs/gulp) projects
 
 
-## Usage
+## Installation
 
 1. Make your project folder and clone metalsmith-boilerplate into it
 
@@ -20,7 +20,7 @@
 3. Now start the build/watch process with this command:
    
    ```sh
-   $ node index.js
+   $ gulp
    ```
    
 4. *Now you are ready to start Metalsmithing!* :thumbsup:
@@ -35,6 +35,7 @@ These are my current defaults, but you can swap these out for anything you want.
 - **Live Reloading:** [BrowserSync](https://github.com/mdvorscak/metalsmith-browser-sync)
 - **Relative Navigation:** Solved with [metalsmith-rootpath](https://github.com/radiovisual/metalsmith-rootpath)
 - **Cache-busting** via [metalsmith-fingerprint](https://github.com/christophercliff/metalsmith-fingerprint)
+- **Browserify** [Browserify](http://browserify.org/) your javascript source automatically
 
 ## What Next?
 
