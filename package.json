@@ -1,7 +1,7 @@
 {
   "name": "metalsmith-gulp-boilerplate",
   "version": "1.2.3",
-  "description": "A starter template for Metalsmith projects",
+  "description": "A starter template for Metalsmith + Gulp projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
