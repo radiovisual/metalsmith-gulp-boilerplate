@@ -28,10 +28,19 @@ start the build/watch process with this command:
 
 ## Usage Notes
 
+#### General
+
+This boilerplate represents an opinionated setup for building static websites with Metalsmith and Gulp. It assumes
+you want to use [Browserify](http://browserify.org/) with your custom scripts and helps you wrap all your javascript
+dependencies into one file. It uses the [Sass](http://sass-lang.com/) precomplier and [Handlebars](http://handlebarsjs.com/)
+templates. Gulp is responsible for the live-reloading (via [BrowserSync](http://www.browsersync.io/)) and the CSS / Browserify
+steps. Metalsmith is responsible for compiling/generating the site files.
+ 
 #### Configuration
 
-You can change or update the default configuration settings in the `site.json` file. The current defaults
-contain build paths, filenames to assign to generated files, globs for gulp, and general site metadata. 
+Use the `site.json` file to change or update the default configuration settings. The current defaults
+contain your source path, destination path, filenames to assign generated files, globs for gulp, and general site
+metadata. If you want to change the gulp or metalsmith builds, use the `gulpfile.js` or `metalsmith.js` files.
  
 #### Packaging Javascript Dependencies
 When you have added new dependencies to your `js/vendor` directory, package the dependencies with this command:
@@ -67,7 +76,8 @@ These are my current defaults, but you can swap these out for anything you want.
 - **Live Reloading:** [BrowserSync](https://github.com/mdvorscak/metalsmith-browser-sync)
 - **Relative Navigation:** Solved with [metalsmith-rootpath](https://github.com/radiovisual/metalsmith-rootpath)
 - **Cache-busting** via [metalsmith-fingerprint](https://github.com/christophercliff/metalsmith-fingerprint)
-- **Browserify** [Browserify](http://browserify.org/) your javascript source automatically
+- **Browserify:** [Browserify](http://browserify.org/) your javascript source automatically
+- **Dependency Wrapping:** minify+concat all your dependencies into one file
 
 ## What Next?
 
