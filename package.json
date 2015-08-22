@@ -1,5 +1,5 @@
 {
-  "name": "metalsmith-boilerplate",
+  "name": "metalsmith-gulp-boilerplate",
   "version": "1.2.3",
   "description": "A starter template for Metalsmith projects",
   "main": "index.js",
@@ -16,7 +16,14 @@
     "starter",
     "static-site",
     "static",
-    "empty"
+    "empty",
+    "gulp",
+    "browserify",
+    "sass",
+    "minify",
+    "browersync",
+    "live",
+    "reload"
   ],
   "author": "Michael Wuergler <senjudev@gmail.com> (http://numetriclabs.com)",
   "license": "CC0-1.0",
