@@ -69,7 +69,7 @@ By default, your generated files are available in Handlebars like so:
 
 ## Defaults
 
-These are my current defaults, but you can swap these out for anything you want.
+These are the current defaults, but you can swap these out for anything you want.
 
 - **Templating:** [Handlebars](http://handlebarsjs.com/) *via [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts)*
 - **CSS Precompiler:** [SASS](https://github.com/stevenschobert/metalsmith-sass)
