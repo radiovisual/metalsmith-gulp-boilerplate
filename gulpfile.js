@@ -43,6 +43,7 @@ gulp.task('browser-sync', function() {
         }
     });
     gulp.watch('./templates/**/*.hbs',  ['metalsmith']);
+    gulp.watch(sourceDir+'/**/*.hbs',   ['metalsmith']);
     gulp.watch(sourceDir+'/js/*.js',    ['metalsmith']);
     gulp.watch(sourceDir+'/css/*.scss', ['metalsmith']);
 });
