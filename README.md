@@ -58,13 +58,13 @@ By default, your generated files are available in Handlebars like so:
 
 ```html
 <!-- your generated css -->
-<link rel="stylesheet" href="{{rootPath}}{{ fingerprint.[css/styles.min.css] }}">
+<link rel="stylesheet" href="{{rootPath}}css/styles.min.css">
 
 <!-- your generated js dependencies -->
-<script src="{{rootPath}}{{ fingerprint.[js/bin/dependencies.min.js] }}"></script>
+<script src="{{rootPath}}js/bin/dependencies.min.js"></script>
 
 <!-- your browserified scripts -->
-<script src="{{rootPath}}{{ fingerprint.[js/bin/bundle.min.js] }}"></script>
+<script src="{{rootPath}}js/bin/bundle.min.js"></script>
 ```
 
 ## Defaults
@@ -75,7 +75,6 @@ These are the current defaults, but you can swap these out for anything you want
 - **CSS Precompiler:** [SASS](https://github.com/stevenschobert/metalsmith-sass)
 - **Live Reloading:** [BrowserSync](https://github.com/mdvorscak/metalsmith-browser-sync)
 - **Relative Navigation:** Solved with [metalsmith-rootpath](https://github.com/radiovisual/metalsmith-rootpath)
-- **Cache-busting** via [metalsmith-fingerprint](https://github.com/christophercliff/metalsmith-fingerprint)
 - **Browserify:** [Browserify](http://browserify.org/) your javascript source automatically
 - **Dependency Wrapping:** minify+concat all your dependencies into one file
 

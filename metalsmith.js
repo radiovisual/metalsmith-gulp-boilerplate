@@ -7,7 +7,6 @@ var rename = require('metalsmith-rename');
 var branch = require('metalsmith-branch');
 var Metalsmith = require('metalsmith');
 var rootPath = require('metalsmith-rootpath');
-var fingerprint = require('metalsmith-fingerprint');
 
 /**
  * Import metadata
@@ -44,9 +43,6 @@ module.exports = Metalsmith(__dirname)
             partials: 'templates/partials'
         }))
     )
-
-    .use(fingerprint({pattern: ['js/bin/bundle.min.js', 'js/bin/dependencies.min.js']}))
-    .use(fingerprint({pattern: ['css/styles.min.css', 'js/bin/dependencies.min.js']}))
 
     // rename handlebars templates to .html
     .use(rename([[/\.hbs$/, '.html']]));

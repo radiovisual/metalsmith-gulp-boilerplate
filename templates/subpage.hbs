@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>{{ title }}</title>
-    {{! Files will be fingerprinted for cache busting }}
-    {{! Access their filenames with the fingerprint variable }}
-    <link rel="stylesheet" href="{{rootPath}}{{ fingerprint.[css/styles.min.css] }}">
+
+    <link rel="stylesheet" href="{{rootPath}}css/styles.min.css">
 </head>
 
 <body>
@@ -20,8 +19,8 @@
 {{! Each file has a filename variable }}
 <p>This file's filename is: {{ filename }}</p>
 
-<script src="{{rootPath}}{{ fingerprint.[js/bin/dependencies.min.js] }}"></script>
-<script src="{{rootPath}}{{ fingerprint.[js/bin/bundle.min.js] }}"></script>
+<script src="{{rootPath}}js/bin/dependencies.min.js"></script>
+<script src="{{rootPath}}js/bin/bundle.min.js"></script>
 
 </body>
 </html>

@@ -52,7 +52,6 @@
     "gulp-streamify": "^1.0.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
-    "metalsmith-fingerprint": "^1.0.2",
     "metalsmith-rootpath": "^0.1.1",
     "through2": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
