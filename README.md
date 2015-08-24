@@ -23,8 +23,16 @@ start the build/watch process with this command:
    ```sh
    $ gulp
    ```
-   
-4. *Now you are ready to start Metalsmithing!* :thumbsup:
+
+4. If this is your first build, you might want to package your javascript dependencies with this command:
+
+   ```sh
+   $ gulp build-deps
+   ```
+   This will gather all the js files in your `js/vendor/` directory and package them into `js/bin/dependencies.min.js`.
+   Use this command each time you add a new dependency to `js/vendor`.
+    
+5. *Now you are ready to start Metalsmithing!* :thumbsup:
 
 ## Usage Notes
 
