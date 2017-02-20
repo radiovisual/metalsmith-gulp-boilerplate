@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/radiovisual/metalsmith-boilerplate.git"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "keywords": [
     "metalsmith",
     "boilerplate",
