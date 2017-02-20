@@ -1,10 +1,5 @@
 'use strict';
-
-require('harmonize')(); // allow node to use ES6 syntax
-
 var layouts = require('metalsmith-layouts');
-var rename = require('metalsmith-rename');
-var branch = require('metalsmith-branch');
 var Metalsmith = require('metalsmith');
 var rootPath = require('metalsmith-rootpath');
 
@@ -23,7 +18,6 @@ var metadata = require('./site.json');
  *
  *  Note that we are not calling the `Metalsmith.build()` here. We will start the build in the gulp file.
  */
-
 module.exports = Metalsmith(__dirname)
 
     // Where shall we build?
@@ -36,13 +30,9 @@ module.exports = Metalsmith(__dirname)
     .use(rootPath())
 
     // Process handlebars templates
-    .use(branch('**/*.hbs')
-        .use(layouts({
-            engine: 'handlebars',
-            directory: 'templates',
-            partials: 'templates/partials'
-        }))
-    )
-
-    // rename handlebars templates to .html
-    .use(rename([[/\.hbs$/, '.html']]));
+    .use(layouts({
+        engine: 'handlebars',
+        directory: 'layouts',
+        partials: 'layouts/partials'
+    }))
+    

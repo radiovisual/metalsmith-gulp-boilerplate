@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-gulp-boilerplate",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A starter template for Metalsmith + Gulp projects",
   "main": "index.js",
   "scripts": {
@@ -36,10 +36,8 @@
     "handlebars": "^3.0.3",
     "harmonize": "^1.4.4",
     "metalsmith": "^2.0.1",
-    "metalsmith-branch": "0.0.4",
     "metalsmith-browser-sync": "^1.0.0",
     "metalsmith-layouts": "^1.4.0",
-    "metalsmith-rename": "^1.0.0",
     "browser-sync": "^2.8.2",
     "browserify": "^11.0.1",
     "globby": "^2.1.0",
