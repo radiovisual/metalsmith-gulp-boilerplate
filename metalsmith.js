@@ -2,12 +2,27 @@
 var layouts = require('metalsmith-layouts');
 var Metalsmith = require('metalsmith');
 var rootPath = require('metalsmith-rootpath');
+var handlebars = require('handlebars');
+var glob = require('glob');
 
 /**
  * Import metadata
  */
 var metadata = require('./site.json');
 
+/**
+ * Add custom helpers to handlebars using the global handlebars instance
+ * https://github.com/superwolff/metalsmith-layouts/issues/63
+ *
+ */
+glob.sync('layouts/helpers/*.js').forEach((fileName) => {
+  const helper = fileName.split('/').pop().replace('.js', '')
+
+  handlebars.registerHelper(
+    helper,
+    require(`./${fileName}`)
+  )
+})
 
 /**
  *  Export your Metalsmith build to use in gulp.
@@ -35,4 +50,3 @@ module.exports = Metalsmith(__dirname)
         directory: 'layouts',
         partials: 'layouts/partials'
     }))
-    
