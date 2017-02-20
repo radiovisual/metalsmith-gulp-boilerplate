@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="{{rootPath}}css/styles.min.css">
+</head>
+
+<body>
+
+<h3>PAGE TEMPLATE</h3>
+
+{{! Pass the metalsmith metadata content to metalsmith-rootpath }}
+{{> navigation this }}
+
+{{{ contents }}}
+
+{{! Each file has a filename variable }}
+<p>This file's filename is: {{ filename }}</p>
+
+<script src="{{rootPath}}js/bin/dependencies.min.js"></script>
+<script src="{{rootPath}}js/bin/bundle.min.js"></script>
+
+</body>
+</html>
