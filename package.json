@@ -4,7 +4,9 @@
   "description": "A starter template for Metalsmith + Gulp projects",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
