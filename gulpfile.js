@@ -24,21 +24,25 @@ var sourceDir = site.source;
 var minified = site.minified;
 
 /**
- * Set the browserSync defaults and start the watch process.
+ * Set the watch process and the browserSync defaults
  *
  */
-gulp.task('browser-sync', function() {
+gulp.task('watch', function() {
     browserSync.init({
         server: {
             baseDir: destinationDir
         }
     });
-    gulp.watch('./layouts/**/**/*.hbs', gulp.series('metalsmith'));
-    gulp.watch(sourceDir+'/js/*.js', gulp.series('css'));
-    gulp.watch(sourceDir+'/css/*.scss', gulp.series('build-deps'));
-    browserSync.reload();
+    gulp.watch('./layouts/**/**/*.hbs', gulp.series('metalsmith', 'browser-sync'));
+    gulp.watch(sourceDir+'/js/vendor/*.js', gulp.series('build-deps', 'metalsmith', 'browser-sync'));
+    gulp.watch(sourceDir+'/js/*.js', gulp.series('browserify', 'metalsmith', 'browser-sync'));
+    gulp.watch(sourceDir+'/css/*.scss', gulp.series('css', 'metalsmith', 'browser-sync'));
 });
 
+gulp.task('browser-sync', function(done) {
+    browserSync.reload();
+    done();
+});
 
 /**
  * Process Sass
@@ -110,7 +114,7 @@ gulp.task('build', gulp.series('css', 'build-deps', 'browserify', 'metalsmith'))
  * The dev task.
  *
  * */
-gulp.task('dev', gulp.series('build', 'browser-sync'));
+gulp.task('dev', gulp.series('build', 'watch'));
 
 /**
  * The default gulp task.

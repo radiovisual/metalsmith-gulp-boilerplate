@@ -26,6 +26,7 @@ build
 # Don't save the generated files
 src/js/bin/*.js
 src/js/bin/*.map
+src/css/*.css
 
 # Misc file system and IDE configs
 .DS_Store
