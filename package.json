@@ -52,6 +52,7 @@
     "jstransformer-handlebars": "^1.1.0",
     "metalsmith": "^2.0.1",
     "metalsmith-browser-sync": "^1.0.0",
+    "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-layouts": "^2.3.0",
     "metalsmith-rootpath": "^1.0.4",
     "rimraf": "^2.6.0",

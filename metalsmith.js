@@ -1,6 +1,7 @@
 'use strict';
-var layouts = require('metalsmith-layouts');
 var Metalsmith = require('metalsmith');
+var layouts = require('metalsmith-layouts');
+var discoverPartials = require('metalsmith-discover-partials');
 var rootPath = require('metalsmith-rootpath');
 var handlebars = require('handlebars');
 var glob = require('glob');
@@ -45,8 +46,14 @@ module.exports = Metalsmith(__dirname)
     // Expose `rootPath` to each file
     .use(rootPath())
 
+    // Process handlebars partials
+    .use(discoverPartials({
+        directory: './layouts/partials',
+    }))
+
     // Process handlebars templates
     .use(layouts({
         engine: 'handlebars',
-        partials: 'layouts/partials',
     }))
+
+
