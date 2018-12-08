@@ -9,8 +9,6 @@ var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
-var globby = require('globby');
-var through = require('through2');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 
@@ -26,13 +24,6 @@ var sourceDir = site.source;
 var minified = site.minified;
 
 /**
- * The default gulp task.
- *
- * */
-gulp.task('default', ['browser-sync', 'metalsmith']);
-
-
-/**
  * Set the browserSync defaults and start the watch process.
  *
  */
@@ -42,10 +33,10 @@ gulp.task('browser-sync', function() {
             baseDir: destinationDir
         }
     });
-    gulp.watch('./templates/**/**/*.hbs',  ['metalsmith']);
-    gulp.watch(sourceDir+'/**/**/*.hbs',   ['metalsmith']);
-    gulp.watch(sourceDir+'/js/*.js',    ['metalsmith']);
-    gulp.watch(sourceDir+'/css/*.scss', ['metalsmith']);
+    gulp.watch('./layouts/**/**/*.hbs', gulp.series('metalsmith'));
+    gulp.watch(sourceDir+'/js/*.js', gulp.series('css'));
+    gulp.watch(sourceDir+'/css/*.scss', gulp.series('build-deps'));
+    browserSync.reload();
 });
 
 
@@ -76,49 +67,55 @@ gulp.task('build-deps', function() {
 /**
  * Bundle all the files you need in browserify.
  *
- * @note: This will browserify all the files you have listed in assetPaths.scripts
- * and minify them into the file you have listed in minified.browserify.
- * See: https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-with-globs.md
+ * @note: This will browserify all you have listed in app.js
+ * See: https://blog.revathskumar.com/2016/02/browserify-with-gulp.html
  */
-gulp.task('browserify', function () {
+gulp.task('browserify', function (done) {
 
-    var bundledStream = through();
-
-    bundledStream
-        .pipe(source(minified.browserify))
+    browserify({
+        entries: sourceDir+'/js/app.js',
+        debug: true
+    })
+        .bundle()
+        .on('error', err => {
+            gutil.log("Browserify Error", gutil.colors.red(err.message))
+        })
+        .pipe(source('app.bundle.js'))
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
-        .on('error', gutil.log)
-        .pipe(sourcemaps.write('./'))
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(assetPaths.jsbin));
-
-    globby(globs.scripts, function(err, entries) {
-        if (err) {
-            bundledStream.emit('error', err);
-            return;
-        }
-
-        var b = browserify({
-            entries: entries,
-            debug: true
-        });
-
-        b.bundle().pipe(bundledStream);
-    });
-
-    return bundledStream;
+        done();
 });
-
 
 /**
  * Start the Metalsmith build.
  *
  */
-gulp.task('metalsmith', ['css', 'browserify'], function(){
-   metalsmith.build(function(err){
-       if(err) throw err;
-       browserSync.reload();
-   });
+gulp.task('metalsmith', function(done){
+    metalsmith.build(function(err){
+        if (err) throw err;
+        done();
+    });
 });
+
+/**
+ * The build task.
+ *
+ * */
+gulp.task('build', gulp.series('css', 'build-deps', 'browserify', 'metalsmith'));
+
+/**
+ * The dev task.
+ *
+ * */
+gulp.task('dev', gulp.series('build', 'browser-sync'));
+
+/**
+ * The default gulp task.
+ *
+ * */
+gulp.task('default', gulp.series('dev'));
+
 

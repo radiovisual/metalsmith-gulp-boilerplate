@@ -35,6 +35,7 @@ glob.sync('layouts/helpers/*.js').forEach((fileName) => {
  */
 module.exports = Metalsmith(__dirname)
 
+    .source(metadata.source)
     // Where shall we build?
     .destination(metadata.destination)
 
@@ -47,6 +48,5 @@ module.exports = Metalsmith(__dirname)
     // Process handlebars templates
     .use(layouts({
         engine: 'handlebars',
-        directory: 'layouts',
-        partials: 'layouts/partials'
+        partials: 'layouts/partials',
     }))
