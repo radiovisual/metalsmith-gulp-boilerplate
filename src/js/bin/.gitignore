@@ -1,4 +1,0 @@
-# dont save the generated files,
-# but preserve the bin folder in the boilerplate
-*
-!.gitignore

@@ -19,16 +19,24 @@
    ```
 
 3. Assuming you have [installed Gulp globally](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#1-install-gulp-globally),
-start the build/watch process with this command:
+start the dev task build/watch process with this command:
 
    ```
    $ gulp
+   ```
+   or
+   ```
+   $ npm run dev
    ```
 
 4. If this is your first build, you might want to package your javascript dependencies with this command:
 
    ```
-   $ gulp build-deps
+   $ gulp build
+   ```
+   or
+   ```
+   $ npm run build
    ```
    This will gather all the js files in your `js/vendor/` directory and package them into `js/bin/dependencies.min.js`.
    Use this command each time you add a new dependency to `js/vendor`.
@@ -75,7 +83,7 @@ By default, your generated files are available in Handlebars like so:
 <script src="{{rootPath}}js/bin/dependencies.min.js"></script>
 
 <!-- your browserified scripts -->
-<script src="{{rootPath}}js/bin/bundle.min.js"></script>
+<script src="{{rootPath}}js/bin/app.bundle.js"></script>
 ```
 
 ## Features and Defaults

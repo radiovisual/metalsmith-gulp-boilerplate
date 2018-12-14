@@ -29,9 +29,6 @@
   },
   "minified": {
     "css": "styles.min.css",
-    "js": "scripts.min.js",
-    "jsdependencies": "dependencies.min.js",
-    "browserify": "bundle.min.js"
+    "jsdependencies": "dependencies.min.js"
   }
-
 }
