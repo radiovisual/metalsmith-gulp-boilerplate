@@ -9,7 +9,7 @@ var browserify = require('browserify');
 var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
 var sourcemaps = require('gulp-sourcemaps');
 
 // Import our configured Metalsmith instance
@@ -82,7 +82,7 @@ gulp.task('browserify', function (done) {
     })
         .bundle()
         .on('error', err => {
-            gutil.log("Browserify Error", gutil.colors.red(err.message))
+            log.error("Browserify Error" + err.message)
         })
         .pipe(source('app.bundle.js'))
         .pipe(buffer())
