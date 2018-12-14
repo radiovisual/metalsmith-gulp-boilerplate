@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
+var minifycss = require('gulp-clean-css');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
